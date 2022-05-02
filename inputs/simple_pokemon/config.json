@@ -1,0 +1,140 @@
+{
+    "tiles": [
+        {
+            "id": 0,
+            "img": "img/grass.png",
+            "allowed_left": [0, 2, 3, 4, 6],
+            "allowed_right": [0, 2, 3, 5, 7],
+            "allowed_up": [0, 1, 4, 5],
+            "allowed_down": [0, 1, 6, 7]
+        },
+        {
+            "id": 1,
+            "img": "img/fence_horizontal.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [1, 5, 7],
+            "allowed_up": [0, 1, 6, 7],
+            "allowed_down": [0, 1, 4, 5]
+        },
+        {
+            "id": 2,
+            "img": "img/fence_left_vertical.png",
+            "allowed_left": [0, 2, 3, 4, 6],
+            "allowed_right": [0, 2, 3, 5, 7],
+            "allowed_up": [2, 4],
+            "allowed_down": [2, 6]
+        },
+        {
+            "id": 3,
+            "img": "img/fence_right_vertical.png",
+            "allowed_left": [0, 2, 3, 4, 6],
+            "allowed_right": [0, 2, 3, 5, 7],
+            "allowed_up": [3, 5],
+            "allowed_down": [3, 7]
+        },
+        {
+            "id": 4,
+            "img": "img/fence_top_left.png",
+            "allowed_left": [0, 2, 3, 5, 7],
+            "allowed_right": [1, 5, 7],
+            "allowed_up": [0, 1, 6, 7],
+            "allowed_down": [2, 6]
+        },
+        {
+            "id": 5,
+            "img": "img/fence_top_right.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [0, 2, 3, 4, 6],
+            "allowed_up": [0, 1, 6, 7],
+            "allowed_down": [3, 7]
+        },
+        {
+            "id": 6,
+            "img": "img/fence_bottom_left.png",
+            "allowed_left": [0, 2, 3, 5, 7],
+            "allowed_right": [1, 5, 7],
+            "allowed_up": [2, 4],
+            "allowed_down": [0, 1, 4, 5]
+        },
+        {
+            "id": 7,
+            "img": "img/fence_bottom_right.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [0, 2, 3, 4, 6],
+            "allowed_up": [3, 5],
+            "allowed_down": [0, 1, 4, 5]
+        },
+        {
+            "id": 8,
+            "img": "img/mountain_top.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [1, 5, 7],
+            "allowed_up": [0, 1, 6, 7],
+            "allowed_down": [0, 1, 4, 5]
+        },
+        {
+            "id": 9,
+            "img": "img/mountain_left.png",
+            "allowed_left": [0, 2, 3, 4, 6],
+            "allowed_right": [0, 2, 3, 5, 7],
+            "allowed_up": [2, 4],
+            "allowed_down": [2, 6]
+        },
+        {
+            "id": 10,
+            "img": "img/mountain_right.png",
+            "allowed_left": [0, 2, 3, 4, 6],
+            "allowed_right": [0, 2, 3, 5, 7],
+            "allowed_up": [3, 5],
+            "allowed_down": [3, 7]
+        },
+        {
+            "id": 11,
+            "img": "img/mountain_top_left.png",
+            "allowed_left": [0, 2, 3, 5, 7],
+            "allowed_right": [1, 5, 7],
+            "allowed_up": [0, 1, 6, 7],
+            "allowed_down": [2, 6]
+        },
+        {
+            "id": 13,
+            "img": "img/mountain_top_right.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [0, 2, 3, 4, 6],
+            "allowed_up": [0, 1, 6, 7],
+            "allowed_down": [3, 7]
+        },
+        {
+            "id": 14,
+            "img": "img/mountain_bottom_left.png",
+            "allowed_left": [0, 2, 3, 5, 7],
+            "allowed_right": [1, 5, 7],
+            "allowed_up": [2, 4],
+            "allowed_down": [0, 1, 4, 5]
+        },
+        {
+            "id": 15,
+            "img": "img/mountain_bottom_right.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [0, 2, 3, 4, 6],
+            "allowed_up": [3, 5],
+            "allowed_down": [0, 1, 4, 5]
+        },
+        {
+            "id": 16,
+            "img": "img/mountain_bottom.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [0, 2, 3, 4, 6],
+            "allowed_up": [3, 5],
+            "allowed_down": [0, 1, 4, 5]
+        },
+        {
+            "id": 17,
+            "img": "img/mountain_entrance.png",
+            "allowed_left": [1, 4, 6],
+            "allowed_right": [0, 2, 3, 4, 6],
+            "allowed_up": [3, 5],
+            "allowed_down": [0, 1, 4, 5]
+        },
+    ]
+}
