@@ -92,7 +92,7 @@ def generate(input_folder):
     layout = solve(WIDTH, HEIGHT, left_adj, right_adj, up_adj, down_adj, weights)
     visualize(layout, input_folder, tiles_to_img)
 
-def parse_config(input_folder, better_config=True):
+def parse_config(input_folder, better_config=False):
     tiles_to_img = {}
     left_adj = defaultdict(set)
     right_adj = defaultdict(set)
@@ -178,8 +178,9 @@ def parse_config(input_folder, better_config=True):
         right_adj[tile_id] = tile['allowed_right']
         up_adj[tile_id] = tile['allowed_up']
         down_adj[tile_id] = tile['allowed_down']
+        weights[tile_id] = tile['weight']
 
-    return tiles_to_img, left_adj, right_adj, up_adj, down_adj, {}
+    return tiles_to_img, left_adj, right_adj, up_adj, down_adj, weights
 
 def visualize(layout, input_folder, tiles_to_img_path):
     # pprint(layout)
@@ -202,4 +203,4 @@ def visualize(layout, input_folder, tiles_to_img_path):
 
     output_img.save('output.png')
 
-generate('inputs/simple_pokemon')
+generate('inputs/simple_knots')

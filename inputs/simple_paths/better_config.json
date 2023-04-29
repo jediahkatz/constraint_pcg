@@ -1,0 +1,44 @@
+{
+    "classes": [
+        {
+            "id": 0,
+            "name": "grass",
+            "can_surround": [0, 1]
+        },
+        {
+            "id": 1,
+            "name": "path",
+            "can_surround": []
+        }
+    ],
+    "tiles": [
+        {
+            "id": 0,
+            "img": "img/empty.png",
+            "class": "grass",
+            "directions": ["c"],
+            "weight": 40
+        },
+        {
+            "id": 1,
+            "img": "img/horizontal.png",
+            "class": "path",
+            "directions": ["n", "s"],
+            "weight": 20
+        },
+        {
+            "id": 2,
+            "img": "img/vertical.png",
+            "class": "path",
+            "directions": ["e", "w"],
+            "weight": 20
+        },
+        {
+            "id": 3,
+            "img": "img/intersection.png",
+            "class": "path",
+            "directions": ["c", "n", "s", "e", "w"],
+            "weight": 20
+        }
+    ]
+}

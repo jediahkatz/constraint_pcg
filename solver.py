@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choices, randint
 from ortools.sat.python import cp_model
 from itertools import product
 
@@ -75,20 +75,27 @@ def solve(
                     has_tile[row+1, col, adj_tile] for adj_tile in down_adj[tile]
                 ]).OnlyEnforceIf(down_adj_satisfied)
 
+    total_weight = sum(weights.values())
+    normalized_weights = {tile: weight / total_weight for tile, weight in weights.items()}
+    tiles_list = list(tiles)
+    normalized_weights_list = [normalized_weights[tile] for tile in tiles_list]
+    
     # random hinting for artistic value
     for row, col in product(range(height), range(width)):
         if randint(0, 10) == 0:
-            model.AddHint(has_tile[row, col, choice(list(tiles))], 1)
+            weighted_random_tile, = choices(tiles_list, normalized_weights_list, k=1)
+            model.AddHint(has_tile[row, col, weighted_random_tile], 1)
 
     score = 0
-    for tile in list(tiles)[1:]:
+    for tile in tiles_list[1:]:
         times_used = sum(
             has_tile[row, col, tile]
             for row, col in product(range(height), range(width))
         )
         diff = model.NewIntVar(-width * height, width * height, '')
         abs_diff = model.NewIntVar(0, width * height, '')
-        model.Add(diff == times_used - weights[tile])
+        expected_times_used = int(normalized_weights[tile] * width * height)
+        model.Add(diff == times_used - expected_times_used)
         model.AddAbsEquality(abs_diff, diff)
         score += abs_diff
         
@@ -96,6 +103,8 @@ def solve(
 
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = 60
+    # solver.parameters.max_number_of_conflicts = 0
+    solver.parameters.preferred_variable_order = solver.parameters.IN_RANDOM_ORDER
     code = solver.Solve(model)
     if code in [cp_model.FEASIBLE, cp_model.OPTIMAL]:
         print('Score:', solver.Value(score))
